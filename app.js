@@ -23,24 +23,30 @@ function convertToWord(letter) {
 }
 
 function win(userChoice, computerChoice) {
+  const userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallComputerWord}. You win!`
-  console.log('USER WINS!')
+  userChoice_div.classList.add('winGlow');
+  setTimeout(function () {userChoice_div.classList.remove('winGlow')}, 300);
 }
 
 function draw(userChoice, computerChoice) {
-    result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallComputerWord}. It's a draw!`
-  console.log('IT\'S ADRAW!')
+  const userChoice_div = document.getElementById(userChoice);
+  result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} equals ${convertToWord(computerChoice)}${smallComputerWord}. It's a draw!`
+  userChoice_div.classList.add('drawGlow');
+  setTimeout(function () {userChoice_div.classList.remove('drawGlow')}, 300);
 }
 
 function lose(userChoice, computerChoice) {
+  const userChoice_div = document.getElementById(userChoice);
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
   result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} loses to ${convertToWord(computerChoice)}${smallComputerWord}. You lost...`
-  console.log('USER LOSES!')
+  userChoice_div.classList.add('lostGlow');
+  setTimeout(function () {userChoice_div.classList.remove('lostGlow')}, 300);
 }
 
 function game(userChoice) {

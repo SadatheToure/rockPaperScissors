@@ -36,7 +36,7 @@ header > h1 {
 .badge {
   background: #E25840;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   font-family: Asap,sans-serif;
 }
 
@@ -88,4 +88,19 @@ header > h1 {
   font-family: Coiny, sans-serif;
   font-weight: bold;
   font-size: 20px;
+}
+
+.winGlow {
+  border: 4px solid #4dcc7d;
+  box-sizing: 0 0 10px #31b43a;
+}
+
+.lostGlow {
+  border: 4px solid #fc121b;
+  box-sizing: 0 0 10px #d01115;
+}
+
+.drawGlow {
+  border: 4px solid #464647;
+  box-sizing: 0 0 10px #25292b;
 }
